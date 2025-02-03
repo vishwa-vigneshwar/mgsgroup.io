@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MGS Group - Broadband & Tech Solutions</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3a8a, #9333ea);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .header img {
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+        .container, .network, .tech, .contact {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1s ease-out forwards;
+            max-width: 90%;
+            margin: auto;
+        }
+        .network, .tech, .contact {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+        .network { animation-delay: 0.5s; }
+        .tech { animation-delay: 1s; }
+        .contact { animation-delay: 1.5s; }
+        .footer {
+            background: linear-gradient(135deg, #9333ea, #1e3a8a);
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+        }
+        .contact-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            width: 90%;
+            max-width: 600px;
+            text-align: left;
+        }
+        .contact-box p {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-box img {
+            width: 24px;
+            height: 24px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            .header img {
+                height: 50px;
+            }
+            .container, .network, .tech, .contact {
+                padding: 15px;
+            }
+            .footer {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.jpg" alt="MGS Group Logo">
+        <h1>MGS Group</h1>
+        <p>Broadband Services | CCTV & Tech Solutions | TV Network</p>
+    </div>
+    <div class="container">
+        <h2>Our Services</h2>
+        <p>Providing high-speed internet, TV network services, and security solutions with cutting-edge technology.</p>
+    </div>
+    <div class="network">
+        <h2>Network Solutions</h2>
+        <p>We offer reliable and secure broadband services to homes and businesses, ensuring seamless connectivity.</p>
+        <p>Our TV network services provide high-quality channels with uninterrupted streaming.</p>
+        <p>We specialize in CCTV and surveillance solutions, ensuring safety and security for your premises.</p>
+    </div>
+    <div class="tech">
+        <h2>Technology & Innovation</h2>
+        <p>We use state-of-the-art networking equipment to ensure high-speed internet with minimal downtime.</p>
+        <p>Our tech solutions integrate AI-driven monitoring systems for enhanced security and efficiency.</p>
+        <p>We provide smart home automation, IoT solutions, and cloud-based networking for businesses.</p>
+    </div>
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-box">
+            <p><img src="location-icon.png" alt="Location"> <strong>Address:</strong> Kattavakkam, Walajabad, Kanchipuram, Tamil Nadu - 631604</p>
+            <p><img src="email-icon.png" alt="Email"> <strong>Email:</strong> <a href="mailto:saiman.ceo@mgsgroup.in">saiman.ceo@mgsgroup.in</a></p>
+            <p><img src="phone-icon.png" alt="Phone"> <strong>Call:</strong> <a href="tel:+916369592354">+91 6369592354</a></p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 MGS Group. All Rights Reserved. | Powered By: Sudarshan Chakra Cyber Security</p>
+    </div>
+</body>
+</html>
