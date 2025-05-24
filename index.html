@@ -12,7 +12,7 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts for Montserrat (bold sans-serif) and Dancing Script (cursive) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
     <style>
         /* Custom font families */
         .font-montserrat {
@@ -44,9 +44,22 @@
         }
         /* Logo styling */
         .subsidiary-logo {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             object-fit: contain;
+        }
+        @media (min-width: 768px) {
+            .subsidiary-logo {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        /* Responsive adjustments for navbar */
+        .nav-menu {
+            transition: all 0.3s ease;
+        }
+        .nav-menu.open {
+            display: block;
         }
     </style>
 </head>
@@ -57,12 +70,19 @@
             <div class="text-2xl font-bold font-montserrat">
                 <a href="#home">MGS GROUP</a>
             </div>
-            <div class="space-x-6">
-                <a href="#home" class="hover:text-gray-200 transition">Home</a>
-                <a href="#about" class="hover:text-gray-200 transition">About</a>
-                <a href="#services" class="hover:text-gray-200 transition">Services</a>
-                <a href="#portfolio" class="hover:text-gray-200 transition">Portfolio</a>
-                <a href="#contact" class="hover:text-gray-200 transition">Contact</a>
+            <!-- Hamburger Icon for Mobile -->
+            <div class="md:hidden">
+                <button id="nav-toggle" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Navigation Links -->
+            <div id="nav-menu" class="nav-menu hidden md:flex md:space-x-6">
+                <a href="#home" class="hover:text-gray-200 transition py-2">Home</a>
+                <a href="#about" class="hover:text-gray-200 transition py-2">About</a>
+                <a href="#services" class="hover:text-gray-200 transition py-2">Services</a>
+                <a href="#portfolio" class="hover:text-gray-200 transition py-2">Portfolio</a>
+                <a href="#contact" class="hover:text-gray-200 transition py-2">Contact</a>
             </div>
         </div>
     </nav>
@@ -70,131 +90,159 @@
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-[var(--mgs-blue)] to-blue-600 text-[var(--mgs-white)]">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-5xl font-bold mb-4 font-montserrat">Welcome to MGS GROUP</h1>
-            <p class="text-xl mb-6 font-dancing">Driving innovation through greenery, technology, enterprise, and community impact.</p>
-            <a href="#contact" class="bg-[var(--mgs-white)] text-[var(--mgs-blue)] px-6 py-3 btn-circle font-semibold hover:bg-blue-100 transition font-montserrat">Get in Touch</a>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-montserrat">Welcome to MGS GROUP</h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-6 font-dancing max-w-3xl mx-auto">
+                Driving innovation through greenery, technology, enterprise, and community impact. At MGS GROUP, we are committed to creating sustainable solutions that empower businesses and communities worldwide, fostering a future where technology and environmental responsibility go hand in hand.
+            </p>
+            <a href="#contact" class="bg-[var(--mgs-white)] text-[var(--mgs-blue)] px-4 sm:px-6 py-2 sm:py-3 btn-circle font-semibold hover:bg-blue-100 transition font-montserrat text-sm sm:text-base">Get in Touch</a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-[var(--mgs-white)]">
+    <section id="about" class="py-12 sm:py-16 md:py-20 bg-[var(--mgs-white)]">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-10 font-montserrat text-[var(--mgs-blue)]">About MGS GROUP</h2>
-            <p class="text-lg text-center max-w-3xl mx-auto mb-8 text-[var(--mgs-black)]">
-                MGS GROUP is a dynamic conglomerate dedicated to innovation and impact across diverse sectors. Our subsidiaries—MGS Greenery Private Limited, MGS Network Private Limited, MGS Enterprises Private Limited, and MGS Foundation—work together to deliver sustainable, technological, and community-focused solutions.
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10 font-montserrat text-[var(--mgs-blue)]">About MGS GROUP</h2>
+            <p class="text-base sm:text-lg md:text-lg text-center max-w-3xl mx-auto mb-6 sm:mb-8 text-[var(--mgs-black)]">
+                MGS GROUP is a dynamic conglomerate dedicated to innovation and impact across diverse sectors. Our subsidiaries—MGS Greenery Private Limited, MGS Network Private Limited, MGS Enterprises Private Limited, and MGS Foundation—work together to deliver sustainable, technological, and community-focused solutions. Since our inception, we have aimed to bridge the gap between technology and sustainability, creating a positive impact on both the environment and society.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-gray-100 p-6 rounded-lg">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="bg-gray-100 p-4 sm:p-6 rounded-lg">
                     <img src="https://via.placeholder.com/100x100" alt="MGS Greenery Logo" class="subsidiary-logo mx-auto mb-4">
-                    <h3 class="text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-blue)]">MGS Greenery Pvt. Ltd.</h3>
-                    <p class="text-[var(--mgs-black)]">Leading sustainable environmental solutions, from landscaping to green technology innovations.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-blue)]">MGS Greenery Pvt. Ltd.</h3>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base">
+                        MGS Greenery Private Limited leads the way in sustainable environmental solutions, specializing in landscaping, urban greening, and green technology innovations. Our mission is to create eco-friendly spaces that enhance urban environments while promoting biodiversity. We have successfully transformed over 50 urban spaces into green havens, reducing carbon footprints and improving air quality in cities across the region.
+                    </p>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg">
+                <div class="bg-gray-100 p-4 sm:p-6 rounded-lg">
                     <img src="https://via.placeholder.com/100x100" alt="MGS Network Logo" class="subsidiary-logo mx-auto mb-4">
-                    <h3 class="text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-blue)]">MGS Network Pvt. Ltd.</h3>
-                    <p class="text-[var(--mgs-black)]">Specializing in cable-based networking solutions, including fiber optic cabling, structured cabling systems, CCTV services, cybersecurity, and telecom services for reliable connectivity.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-blue)]">MGS Network Pvt. Ltd.</h3>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base">
+                        MGS Network Private Limited specializes in cable-based networking solutions, including fiber optic cabling, structured cabling systems, CCTV services, cybersecurity, and telecom services for reliable connectivity. We provide end-to-end solutions for businesses, ensuring seamless communication and security. Our team has deployed over 100 enterprise-grade networks and installed advanced CCTV systems for commercial and industrial clients, enhancing safety and operational efficiency.
+                    </p>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg">
+                <div class="bg-gray-100 p-4 sm:p-6 rounded-lg">
                     <img src="https://via.placeholder.com/100x100" alt="MGS Enterprises Logo" class="subsidiary-logo mx-auto mb-4">
-                    <h3 class="text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-blue)]">MGS Enterprises Pvt. Ltd.</h3>
-                    <p class="text-[var(--mgs-black)]">Delivering business consulting, product development, and innovative enterprise solutions.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-blue)]">MGS Enterprises Pvt. Ltd.</h3>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base">
+                        MGS Enterprises Private Limited delivers business consulting, product development, and innovative enterprise solutions tailored to meet the unique needs of our clients. We help businesses grow by offering strategic insights, developing cutting-edge products, and optimizing operations. Our consulting services have supported over 30 companies in achieving operational excellence, while our product development team has launched innovative solutions in logistics and supply chain management.
+                    </p>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg">
+                <div class="bg-gray-100 p-4 sm:p-6 rounded-lg">
                     <img src="https://via.placeholder.com/100x100" alt="MGS Foundation Logo" class="subsidiary-logo mx-auto mb-4">
-                    <h3 class="text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-blue)]">MGS Foundation</h3>
-                    <p class="text-[var(--mgs-black)]">Empowering communities through education, environmental, and social impact initiatives.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-blue)]">MGS Foundation</h3>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base">
+                        MGS Foundation is the non-profit arm of MGS GROUP, dedicated to empowering communities through education, environmental initiatives, and social impact programs. We focus on providing access to quality education, promoting environmental awareness, and supporting underprivileged communities. To date, we have educated over 1,000 children through our scholarship programs and planted 10,000 trees as part of our environmental campaigns.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-100">
+    <section id="services" class="py-12 sm:py-16 md:py-20 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-10 font-montserrat text-[var(--mgs-blue)]">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-[var(--mgs-white)] p-6 rounded-lg shadow-lg hover-scale">
-                    <i class="fas fa-leaf text-[var(--mgs-blue)] text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">Environmental Solutions</h3>
-                    <p class="text-[var(--mgs-black)]">Sustainable landscaping, green technology, and eco-friendly initiatives by MGS Greenery.</p>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10 font-montserrat text-[var(--mgs-blue)]">Our Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-[var(--mgs-white)] p-4 sm:p-6 rounded-lg shadow-lg hover-scale">
+                    <i class="fas fa-leaf text-[var(--mgs-blue)] text-3xl sm:text-4xl mb-4"></i>
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">Environmental Solutions</h3>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base">
+                        MGS Greenery offers a wide range of environmental solutions, including sustainable landscaping, urban forestry, and green technology development. We design and maintain green spaces that promote biodiversity, reduce urban heat, and improve air quality. Our services include rooftop gardens, vertical greenery systems, and eco-friendly irrigation solutions, ensuring a sustainable future for urban environments.
+                    </p>
                 </div>
-                <div class="bg-[var(--mgs-white)] p-6 rounded-lg shadow-lg hover-scale">
-                    <i class="fas fa-network-wired text-[var(--mgs-blue)] text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">Networking & IT</h3>
-                    <p class="text-[var(--mgs-black)]">Cable-based networking solutions, including fiber optic and structured cabling, CCTV services, cybersecurity, and telecom services by MGS Network.</p>
+                <div class="bg-[var(--mgs-white)] p-4 sm:p-6 rounded-lg shadow-lg hover-scale">
+                    <i class="fas fa-network-wired text-[var(--mgs-blue)] text-3xl sm:text-4xl mb-4"></i>
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">Networking & IT</h3>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base">
+                        MGS Network provides comprehensive networking and IT solutions, specializing in cable-based infrastructure such as fiber optic and structured cabling, CCTV systems for enhanced security, cybersecurity protocols, and telecom services. We ensure reliable, high-speed connectivity for businesses, along with state-of-the-art surveillance systems to safeguard assets and data, making us a trusted partner for enterprises worldwide.
+                    </p>
                 </div>
-                <div class="bg-[var(--mgs-white)] p-6 rounded-lg shadow-lg hover-scale">
-                    <i class="fas fa-briefcase text-[var(--mgs-blue)] text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">Business Consulting</h3>
-                    <p class="text-[var(--mgs-black)]">Strategic consulting and innovative product development by MGS Enterprises.</p>
+                <div class="bg-[var(--mgs-white)] p-4 sm:p-6 rounded-lg shadow-lg hover-scale">
+                    <i class="fas fa-briefcase text-[var(--mgs-blue)] text-3xl sm:text-4xl mb-4"></i>
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">Business Consulting</h3>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base">
+                        MGS Enterprises offers strategic business consulting and product development services to help companies thrive in competitive markets. Our consulting services include market analysis, operational optimization, and digital transformation strategies, while our product development team creates innovative solutions like supply chain management tools and customer relationship management systems, driving efficiency and growth.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-[var(--mgs-white)]">
+    <section id="portfolio" class="py-12 sm:py-16 md:py-20 bg-[var(--mgs-white)]">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-10 font-montserrat text-[var(--mgs-blue)]">Our Portfolio</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover-scale">
-                    <img src="https://via.placeholder.com/300x200" alt="Green Project" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <h3 class="text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">Urban Green Space</h3>
-                    <p class="text-[var(--mgs-black)]">A sustainable landscaping project by MGS Greenery enhancing urban environments.</p>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10 font-montserrat text-[var(--mgs-blue)]">Our Portfolio</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-gray-100 p-4 sm:p-6 rounded-lg shadow-lg hover-scale">
+                    <img src="https://via.placeholder.com/300x200" alt="Green Project" class="w-full h-40 sm:h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">Urban Green Space</h3>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base">
+                        A flagship project by MGS Greenery, this urban green space initiative transformed a 5-acre derelict plot in a metropolitan area into a vibrant park. Featuring native plant species, a community garden, and solar-powered lighting, the project has reduced local temperatures by 3°C, improved air quality, and provided a recreational space for over 10,000 residents annually.
+                    </p>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover-scale">
-                    <img src="https://via.placeholder.com/300x200" alt="Network Project" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <h3 class="text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">Enterprise Network</h3>
-                    <p class="text-[var(--mgs-black)]">A secure IT network infrastructure deployed by MGS Network for a global client.</p>
+                <div class="bg-gray-100 p-4 sm:p-6 rounded-lg shadow-lg hover-scale">
+                    <img src="https://via.placeholder.com/300x200" alt="Network Project" class="w-full h-40 sm:h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">Enterprise Network</h3>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base">
+                        MGS Network deployed a secure, high-speed fiber optic network for a global corporation, spanning 15 office locations. The project included structured cabling and CCTV installations, enhancing operational efficiency and security. The network supports over 2,000 employees, ensuring seamless communication and data transfer, with a 99.9% uptime guarantee.
+                    </p>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover-scale">
-                    <img src="https://via.placeholder.com/300x200" alt="Community Project" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <h3 class="text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">Community Education</h3>
-                    <p class="text-[var(--mgs-black)]">An education initiative by MGS Foundation empowering local communities.</p>
+                <div class="bg-gray-100 p-4 sm:p-6 rounded-lg shadow-lg hover-scale">
+                    <img src="https://via.placeholder.com/300x200" alt="Community Project" class="w-full h-40 sm:h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">Community Education</h3>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base">
+                        An initiative by MGS Foundation, this program established a community learning center in a rural area, providing education to over 500 children annually. The center offers digital literacy courses, environmental workshops, and vocational training, empowering the community with skills for sustainable livelihoods. The project has increased school enrollment rates by 20% in the region.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-[var(--mgs-blue)] text-[var(--mgs-white)]">
+    <section id="contact" class="py-12 sm:py-16 md:py-20 bg-[var(--mgs-blue)] text-[var(--mgs-white)]">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-10 font-montserrat">Contact MGS GROUP</h2>
-            <form id="contact-form" class="max-w-lg mx-auto space-y-4 mb-12">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10 font-montserrat">Contact MGS GROUP</h2>
+            <p class="text-base sm:text-lg md:text-lg text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+                We’d love to hear from you! Whether you’re interested in our environmental solutions, networking services, business consulting, or community initiatives, our team is here to assist. Reach out to us using the form below or contact our subsidiaries directly for specific inquiries.
+            </p>
+            <form id="contact-form" class="max-w-lg mx-auto space-y-4 mb-8 sm:mb-12">
                 <div>
-                    <label for="name" class="block text-lg mb-2">Name</label>
+                    <label for="name" class="block text-sm sm:text-lg mb-2">Name</label>
                     <input type="text" id="name" name="name" class="w-full p-3 rounded-lg bg-gray-100 text-[var(--mgs-black)]" required>
                 </div>
                 <div>
-                    <label for="email" class="block text-lg mb-2">Email</label>
+                    <label for="email" class="block text-sm sm:text-lg mb-2">Email</label>
                     <input type="email" id="email" name="email" class="w-full p-3 rounded-lg bg-gray-100 text-[var(--mgs-black)]" required>
                 </div>
                 <div>
-                    <label for="message" class="block text-lg mb-2">Message</label>
+                    <label for="message" class="block text-sm sm:text-lg mb-2">Message</label>
                     <textarea id="message" name="message" rows="5" class="w-full p-3 rounded-lg bg-gray-100 text-[var(--mgs-black)]" required></textarea>
                 </div>
-                <button type="submit" class="bg-[var(--mgs-white)] text-[var(--mgs-blue)] px-6 py-3 btn-circle font-semibold hover:bg-blue-100 transition w-full font-montserrat">Send Message</button>
+                <button type="submit" class="bg-[var(--mgs-white)] text-[var(--mgs-blue)] px-4 sm:px-6 py-2 sm:py-3 btn-circle font-semibold hover:bg-blue-100 transition w-full font-montserrat text-sm sm:text-base">Send Message</button>
             </form>
             <!-- Contact Information Subsection -->
-            <h3 class="text-3xl font-bold text-center mb-6 font-montserrat">Contact Information</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-100 p-6 rounded-lg">
-                    <h4 class="text-lg font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">MGS Greenery Pvt. Ltd.</h4>
-                    <p class="text-[var(--mgs-black)]"><i class="fas fa-phone-alt mr-2 text-[var(--mgs-blue)]"></i>+91 7538800996</p>
-                    <p class="text-[var(--mgs-black)]"><i class="fas fa-envelope mr-2 text-[var(--mgs-blue)]"></i><a href="mailto:greenery@mgsgroup.in" class="hover:text-[var(--mgs-blue)]">greenery@mgsgroup.in</a></p>
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-6 sm:mb-8 font-montserrat">Contact Information</h3>
+            <p class="text-base sm:text-lg text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+                For specific inquiries, reach out to our subsidiaries directly. Our dedicated teams at MGS Greenery, MGS Network, MGS Enterprises, and MGS Foundation are ready to assist you with tailored solutions and support.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="bg-gray-100 p-4 sm:p-6 rounded-lg">
+                    <h4 class="text-base sm:text-lg font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">MGS Greenery Pvt. Ltd.</h4>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base"><i class="fas fa-phone-alt mr-2 text-[var(--mgs-blue)]"></i><a href="tel:+917538800996" class="hover:text-[var(--mgs-blue)]">+91 7538800996</a></p>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base"><i class="fas fa-envelope mr-2 text-[var(--mgs-blue)]"></i><a href="mailto:greenery@mgsgroup.in" class="hover:text-[var(--mgs-blue)]">greenery@mgsgroup.in</a></p>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg">
-                    <h4 class="text-lg font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">MGS Network Pvt. Ltd.</h4>
-                    <p class="text-[var(--mgs-black)]"><i class="fas fa-phone-alt mr-2 text-[var(--mgs-blue)]"></i>+91 6369592354</p>
-                    <p class="text-[var(--mgs-black)]"><i class="fas fa-envelope mr-2 text-[var(--mgs-blue)]"></i><a href="mailto:network@mgsgroup.in" class="hover:text-[var(--mgs-blue)]">network@mgsgroup.in</a></p>
+                <div class="bg-gray-100 p-4 sm:p-6 rounded-lg">
+                    <h4 class="text-base sm:text-lg font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">MGS Network Pvt. Ltd.</h4>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base"><i class="fas fa-phone-alt mr-2 text-[var(--mgs-blue)]"></i><a href="tel:+916369592354" class="hover:text-[var(--mgs-blue)]">+91 6369592354</a></p>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base"><i class="fas fa-envelope mr-2 text-[var(--mgs-blue)]"></i><a href="mailto:network@mgsgroup.in" class="hover:text-[var(--mgs-blue)]">network@mgsgroup.in</a></p>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg">
-                    <h4 class="text-lg font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">MGS Enterprises Pvt. Ltd.</h4>
-                    <p class="text-[var(--mgs-black)]"><i class="fas fa-envelope mr-2 text-[var(--mgs-blue)]"></i><a href="mailto:enterprises@mgsgroup.in" class="hover:text-[var(--mgs-blue)]">enterprises@mgsgroup.in</a></p>
+                <div class="bg-gray-100 p-4 sm:p-6 rounded-lg">
+                    <h4 class="text-base sm:text-lg font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">MGS Enterprises Pvt. Ltd.</h4>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base"><i class="fas fa-envelope mr-2 text-[var(--mgs-blue)]"></i><a href="mailto:enterprises@mgsgroup.in" class="hover:text-[var(--mgs-blue)]">enterprises@mgsgroup.in</a></p>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg">
-                    <h4 class="text-lg font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">MGS Foundation</h4>
-                    <p class="text-[var(--mgs-black)]"><i class="fas fa-envelope mr-2 text-[var(--mgs-blue)]"></i><a href="mailto:foundation@mgsgroup.in" class="hover:text-[var(--mgs-blue)]">foundation@mgsgroup.in</a></p>
+                <div class="bg-gray-100 p-4 sm:p-6 rounded-lg">
+                    <h4 class="text-base sm:text-lg font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">MGS Foundation</h4>
+                    <p class="text-[var(--mgs-black)] text-sm sm:text-base"><i class="fas fa-envelope mr-2 text-[var(--mgs-blue)]"></i><a href="mailto:foundation@mgsgroup.in" class="hover:text-[var(--mgs-blue)]">foundation@mgsgroup.in</a></p>
                 </div>
             </div>
         </div>
@@ -203,16 +251,16 @@
     <!-- Footer -->
     <footer class="bg-[var(--mgs-black)] text-[var(--mgs-white)] py-6">
         <div class="container mx-auto px-4 text-center">
-            <p class="font-dancing">© 2025 MGS GROUP. All rights reserved.</p>
+            <p class="font-dancing text-sm sm:text-base">© 2025 MGS GROUP. All rights reserved.</p>
             <div class="mt-4 space-x-4">
-                <a href="#" class="hover:text-[var(--mgs-blue)]"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="hover:text-[var(--mgs-blue)]"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="hover:text-[var(--mgs-blue)]"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-[var(--mgs-blue)]"><i class="fab fa-linkedin text-lg sm:text-xl"></i></a>
+                <a href="#" class="hover:text-[var(--mgs-blue)]"><i class="fab fa-twitter text-lg sm:text-xl"></i></a>
+                <a href="#" class="hover:text-[var(--mgs-blue)]"><i class="fab fa-facebook text-lg sm:text-xl"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Form Handling and Smooth Scrolling -->
+    <!-- JavaScript for Form Handling, Smooth Scrolling, and Responsive Navbar -->
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -229,6 +277,22 @@
             e.preventDefault();
             alert('Form submitted! (Note: This is a frontend-only demo. Backend integration required for actual form processing.)');
             this.reset();
+        });
+
+        // Toggle navbar menu on mobile
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+            navMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when a link is clicked (mobile)
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.add('hidden');
+                navMenu.classList.remove('open');
+            });
         });
     </script>
 </body>
