@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="MGS GROUP empowers innovation through sustainable solutions in greenery, networking, enterprises, and community initiatives. Discover MGS Greenery, MGS Network, MGS Enterprises, and MGS Foundation.">
-    <meta name="keywords" content="MGS GROUP,mgsgroup.in , sustainable solutions, green technology, urban greening, networking solutions, business consulting, community initiatives, MGS Greenery, MGS Network, MGS Enterprises, MGS Foundation">
+    <meta name="keywords" content="MGS GROUP, sustainable solutions, green technology, urban greening, networking solutions, business consulting, community initiatives, MGS Greenery, MGS Network, MGS Enterprises, MGS Foundation">
     <meta name="author" content="MGS GROUP">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="MGS GROUP - Empowering Innovation">
@@ -110,6 +110,20 @@
         .nav-menu.open {
             display: block;
         }
+        /* Founder image styling */
+        .founder-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--mgs-white);
+        }
+        @media (min-width: 768px) {
+            .founder-img {
+                width: 200px;
+                height: 200px;
+            }
+        }
     </style>
 </head>
 <body class="font-sans bg-gray-100 text-gray-800">
@@ -138,13 +152,19 @@
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-[var(--mgs-blue)] to-blue-500 text-[var(--mgs-white)]">
-        <div class="container mx-auto px-4 text-center">
-            <img src="mgslogo.png" alt="MGS Logo" class="subsidiary-logo mx-auto mb-4" loading="lazy">
+        <div class="container mx-auto px-4 text-center"><br>
+            <img src="mgslogo.png" alt="MGS GROUP Logo" class="subsidiary-logo mx-auto mb-4" loading="lazy">
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-montserrat">Welcome to MGS GROUP</h1>
             <p class="text-lg sm:text-xl md:text-2xl mb-6 font-dancing max-w-3xl mx-auto">
                 Driving innovation through greenery, technology, enterprise, and community impact. At MGS GROUP, we are committed to creating sustainable solutions that empower businesses and communities worldwide, fostering a future where technology and environmental responsibility go hand in hand.
             </p>
             <a href="#contact" class="bg-[var(--mgs-white)] text-[var(--mgs-blue)] px-4 sm:px-6 py-2 sm:py-3 btn-circle font-semibold hover:bg-blue-100 transition font-montserrat text-sm sm:text-base">Get in Touch</a>
+            <!-- Founder Section -->
+            <div class="mt-8">
+                <img src="founder.jpg" alt="John Doe, Founder of MGS GROUP" class="founder-img mx-auto mb-4" loading="lazy">
+                <p class="text-base sm:text-lg md:text-xl font-montserrat">Founded by <span class="font-bold">Mr. MG.SUGUMAR 
+                </span>, visionary leader driving sustainable innovation.</p>
+            </div>
         </div>
     </section>
 
@@ -173,7 +193,7 @@
                     <a href="/network" class="bg-[var(--mgs-blue)] text-[var(--mgs-white)] px-4 py-2 btn-circle font-semibold hover:bg-[#E6F7FF] transition mt-4 inline-block">Learn More</a>
                 </div>
                 <div class="bg-gray-100 p-4 sm:p-6 rounded-lg">
-                    <img src="mgs-enterprises-logo.jpg" alt="MGS Enterprises Business Consulting Logo" class="subsidiary-logo mx-auto mb-4" loading="lazy">
+                    <img src="mgsenterprises.png" alt="MGS Enterprises Business Consulting Logo" class="subsidiary-logo mx-auto mb-4" loading="lazy">
                     <h3 class="text-lg sm:text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-blue)]">MGS Enterprises Pvt. Ltd.</h3>
                     <p class="text-[var(--mgs-black)] text-sm sm:text-base">
                         <a href="/enterprises" class="hover:text-[var(--mgs-blue)]">MGS Enterprises Private Limited</a> delivers business consulting, product development, and innovative enterprise solutions. Our consulting services have supported over 30 companies in achieving operational excellence, while our product development team has launched solutions in logistics and supply chain management.
@@ -231,7 +251,7 @@
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10 font-montserrat text-[var(--mgs-blue)]">Our Portfolio: Impactful Projects</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div class="bg-gray-100 p-4 sm:p-6 rounded-lg shadow-lg hover-scale">
-                    <img src="urban-green-space.jpg" alt="Urban Green Space Project by MGS Greenery" class="w-full h-40 sm:h-48 object-cover rounded-lg mb-4" loading="lazy">
+                    <img src="weetgrass.jpg" alt="Urban Green Space Project by MGS Greenery" class="w-full h-40 sm:h-48 object-cover rounded-lg mb-4" loading="lazy">
                     <h3 class="text-lg sm:text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-black)]">Urban Green Space</h3>
                     <p class="text-[var(--mgs-black)] text-sm sm:text-base">
                         A flagship project by MGS Greenery, this urban green space initiative transformed a 5-acre derelict plot into a vibrant park with native plants and solar-powered lighting, reducing local temperatures by 3°C.
@@ -335,7 +355,7 @@
         // Form submission handling (placeholder)
         document.getElementById('contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            alert('Form submitted! (Note: This is a frontend-only demo. Backend integration required for actual form processing.)');
+            alert('Form submitted! (Note>this is a frontend-only demo. Backend integration required for actual form processing.)');
             this.reset();
         });
 
