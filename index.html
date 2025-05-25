@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts for Montserrat (bold sans-serif) and Dancing Script (cursive) -->
+    <!-- Google Fonts for Montserrat and Dancing Script -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
     <style>
         /* Custom font families */
@@ -32,15 +32,23 @@
         .hover-scale:hover {
             transform: scale(1.05);
         }
-        /* Circular button styling inspired by logo */
+        /* Circular button styling */
         .btn-circle {
             border-radius: 9999px;
         }
-        /* Custom colors inspired by logo */
+        /* Custom colors with lighter blue */
         :root {
-            --mgs-blue: #00AEEF;
+            --mgs-blue: #4AC8F4; /* Lighter blue for a softer look */
             --mgs-black: #000000;
             --mgs-white: #FFFFFF;
+        }
+        /* Adjusted hover effects for buttons */
+        .btn-circle:hover {
+            background-color: #E6F7FF; /* Lighter hover shade for contrast */
+        }
+        /* Navigation hover effect */
+        .nav-menu a:hover {
+            color: #E6F7FF; /* Lighter hover shade for nav links */
         }
         /* Logo styling */
         .subsidiary-logo {
@@ -88,7 +96,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-[var(--mgs-blue)] to-blue-600 text-[var(--mgs-white)]">
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-[var(--mgs-blue)] to-blue-500 text-[var(--mgs-white)]">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-montserrat">Welcome to MGS GROUP</h1>
             <p class="text-lg sm:text-xl md:text-2xl mb-6 font-dancing max-w-3xl mx-auto">
@@ -117,7 +125,7 @@
                     <img src="https://via.placeholder.com/100x100" alt="MGS Network Logo" class="subsidiary-logo mx-auto mb-4">
                     <h3 class="text-lg sm:text-xl font-semibold mb-2 font-montserrat text-[var(--mgs-blue)]">MGS Network Pvt. Ltd.</h3>
                     <p class="text-[var(--mgs-black)] text-sm sm:text-base">
-                        MGS Network Private Limited specializes in cable-based networking solutions, including fiber optic cabling, structured cabling systems, CCTV services, cybersecurity, and telecom services for reliable connectivity. We provide end-to-end solutions for businesses, ensuring seamless communication and security. Our team has deployed over 100 enterprise-grade networks and installed advanced CCTV systems for commercial and industrial clients, enhancing safety and operational efficiency.
+                        MGS Network Private Limited specializes in cable-based networking solutions, including fiber optic cabling, structured cabling systems, CCTV services, cybersecurity, and telecom services for reliable connectivity. We provide end-to-end solutions for businesses, ensuring seamless communication and security. Our team has deployed over 100 enterprise-grade networks and術 installed advanced CCTV systems for commercial and industrial clients, enhancing safety and operational efficiency.
                     </p>
                 </div>
                 <div class="bg-gray-100 p-4 sm:p-6 rounded-lg">
